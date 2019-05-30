@@ -1,0 +1,4 @@
+#Thu May 30 16:24:32 ICT 2019
+base.0=C\:\\Users\\Bamboo Labs\\Desktop\\hello\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex
