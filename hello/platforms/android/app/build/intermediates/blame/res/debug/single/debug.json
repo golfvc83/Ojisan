@@ -44,6 +44,10 @@
         "source": "C:\\Users\\Bamboo Labs\\Desktop\\hello\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
     },
     {
+        "merged": "C:\\Users\\Bamboo Labs\\Desktop\\hello\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_camera_activity.xml.flat",
+        "source": "C:\\Users\\Bamboo Labs\\Desktop\\hello\\platforms\\android\\app\\src\\main\\res\\layout\\camera_activity.xml"
+    },
+    {
         "merged": "C:\\Users\\Bamboo Labs\\Desktop\\hello\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxhdpi_screen.png.flat",
         "source": "C:\\Users\\Bamboo Labs\\Desktop\\hello\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
     },

@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Selfie Taker</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/picFile.js"></script>
+  <style>
+   .button100{
+		width: 100%; height: 100%; font-size:300%; background-color:#999;
+   }
+   
+   .button50{
+		width: 49.85%; height: 100%; font-size:300%; background-color:#999;
+   }
+   
+   .displayNone{
+		display:none;
+   }
+   
+   <script type="text/javascript" src="js/picFile.js"></script>
+  </style>
+  </head>
+  <body style = "margin: 0px; padding: 0px; width: 100%; height: 100%;">
+	
+	<div id = "back" style = "position: absolute; top:1%; left: 1%; width: 15%; height: 10%; z-index:10;" onclick="backToMainMenu()" >
+        <button id = "keep" class ="button100">BACK</button>
+     </div>
+	 
+    <div style = "position: absolute; top:0%; width: 100%; height: 80%; background-image:url('img/circle.png'); background-color:transparent; background-size: 100% 100%; " class="controls">
+		<img id = "img" style = "width: 100%; height:100%; position: relative; z-index:-100;" src = ""></img>
+	</div>
+	
+    <div style = "position: absolute; top:80%; width: 100%; height: 20%; background-color:grey;" class="controls">
+      <div id = "block1" class="block">
+        <button class ="button100" id="taker">Take Picture</button>
+        <!--<button style = "position: relative; width: 50%; height: 50%; background-color:#111;" id="stopCameraButton">Stop Camera</button>-->
+      </div>
+	 
+	 <div id = "block2" class="block displayNone">
+        <button id = "save" class ="button100" >KEEP</button>
+		   <button id = "again" class ="button100" >TRY AGAIN</button>
+        <!--<button style = "position: relative; width: 50%; height: 50%; background-color:#111;" id="stopCameraButton">Stop Camera</button>-->
+      </div>
+	  
+      <!--<div class="block">
+        <p style="margin-top:0px"><button id="startCameraBelowButton">Start Camera Behind HTML</button></p>
+
+        <p style="margin-bottom:0px">
+          Color Effect:
+          <select id="selectColorEffect">
+            <option selected value="none">none</option>
+            <option value="aqua">aqua</option>
+            <option value="blackboard">blackboard</option>
+            <option value="mono">mono</option>
+            <option value="negative">negative</option>
+            <option value="posterize">posterize</option>
+            <option value="sepia">sepia</option>
+            <option value="solarize">solarize</option>
+            <option value="whiteboard">whiteboard</option>
+          </select>
+        </p>
+
+        <p style="margin-bottom:0px;">
+          Flash Mode:
+          <select id="selectFlashMode">
+            <option selected value="off">off</option>
+            <option value="on">on</option>
+            <option value="auto">auto</option>
+            <option value="torch">torch</option>
+          </select>
+        </p>
+
+        <div id="androidOnly">
+          <p style="margin-bottom:0px;">
+            Zoom:
+            <span id="zoomValue"style="margin: 0 5px;">1</span>
+            <input type="range" id="zoomSlider" min="1" max="5" value="1" />
+          </p>
+        </div>
+      </div>
+      <div class="block">
+        <button id="takePictureButton">Take Picture</button>
+        <button id="switchCameraButton">Switch Camera</button>
+        <button id="changePreviewSize">Change Preview Size</button>
+      </div>
+      <div class="block">
+        <button id="hideButton">Hide</button>
+        <button id="showButton">Show</button>
+      </div>
+      <div class="block">
+        <button id="showSupportedPictureSizes">Supported Picture Sizes</button>
+      </div>
+    </div>
+
+    <div class="pictures">
+      <p><img id="originalPicture" width="200"/></p>
+    </div>-->
+
+  
+	<script>
+		
+		let imageIndex;
+		
+		function backToMainMenu(){
+			app.stopCamera();
+			location.href = "view.html?backToGallery=true";
+		}
+		
+		  let app = {	
+				
+                init: function(){
+					/*document.addEventListener("backbutton", function (e) {
+						e.preventDefault();
+					}, false );*/
+					
+                    var urlParams = new URLSearchParams(window.location.search);
+					imageIndex = urlParams.get('key');
+					imageIndex = parseInt(imageIndex);
+					//document.getElementById("img").src = cordova.file.applicationStorageDirectory+"imageFolder/"+"muricaman.png";
+					cordova.plugins.permissions.checkPermission(cordova.plugins.permissions.CAMERA, function( status ){
+					
+					if ( status.hasPermission ) {
+						document.getElementById('taker').addEventListener('click', app.takePicture, false);
+						document.getElementById('save').addEventListener('click', app.save, false);	
+						document.getElementById('again').addEventListener('click', app.hide, false);						
+						app.startCameraBelow();
+					}else {
+						//alert("No :( ");
+						cordova.plugins.permissions.requestPermission(cordova.plugins.permissions.CAMERA, function(status){
+							if(status.hasPermission == false){ 
+								alert("Please allow the app to access the camera.");
+							}else{
+								document.getElementById('taker').addEventListener('click', app.takePicture, false);
+								document.getElementById('save').addEventListener('click', app.save, false);	
+								document.getElementById('again').addEventListener('click', app.hide, false);					
+								app.startCameraBelow();
+							}
+						},
+						
+						function(error){alert("Something went wrong with the code error_code: "+error);});
+						}
+				});
+					
+					
+                },
+				
+				startCameraBelow: function(){
+					CameraPreview.startCamera({x: 0, y: 0, width: screen.width, height: screen.height * 0.8, camera: "front", tapPhoto: true, previewDrag: false, toBack: true});
+				},
+
+				stopCamera: function(){
+					CameraPreview.stopCamera();
+				},
+
+				takePicture: function(){
+					CameraPreview.takePicture({width:640, height:1240, quality: 85}, function(imgData){
+					document.getElementById('img').src = 'data:image/jpeg;base64,' + imgData;
+					app.imgData = imgData;
+					CameraPreview.hide();
+					document.getElementById('block2').classList.remove("displayNone");
+					document.getElementById('block1').classList.add("displayNone");
+				},function(err){alert(err);});
+			
+			},
+			
+			  hide: function(){
+				//CameraPreview.hide();
+				document.getElementById('img').src = '';
+				CameraPreview.show();
+				document.getElementById('block1').classList.remove("displayNone");
+				document.getElementById('block2').classList.add("displayNone");
+			},
+			
+			save: function(){
+				
+				app.saveFile(app.imgData, picFile[imageIndex].name);
+				
+			},
+			
+			saveFile: function(imgUri, newFileName) {
+					window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory+"imageFolder", function success(dirEntry) {
+						dirEntry.getFile(newFileName, {create: false, exclusive: false}, function(fileEntry) {
+
+							fileEntry.createWriter(function (fileWriter) {
+								fileWriter.onwriteend = function() {
+									console.log("Successful file write...");
+								};
+
+								fileWriter.onerror = function (e) {
+									console.log("Failed file write: " + e.toString());
+								};
+								
+							dataObj = b64toBlob(imgUri, "image/jpeg", 512);
+							//dataObj = new Blob([imgUri], {type: 'image/jpeg'});
+       
+							fileWriter.write(dataObj);
+							app.stopCamera();
+							location.href = "view.html?backToGallery=true";
+
+						});
+							
+							
+
+						}, null);
+
+						
+					
+				}, function () {
+					// If don't get the FileEntry (which may happen when testing
+					// on some emulators), copy to a new FileEntry.
+					//createNewFileEntry(imgUri);
+					console.log("can not get file entry");
+					});
+				}
+				
+          };
+			
+			
+		function onload(){
+			
+		}
+		
+		function b64toBlob(b64Data, contentType, sliceSize) {
+			contentType = contentType || '';
+			sliceSize = sliceSize || 512;
+
+			var byteCharacters = atob(b64Data);
+			var byteArrays = [];
+
+			for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+				var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+				var byteNumbers = new Array(slice.length);
+				for (var i = 0; i < slice.length; i++) {
+					byteNumbers[i] = slice.charCodeAt(i);
+				}
+
+				var byteArray = new Uint8Array(byteNumbers);
+
+				byteArrays.push(byteArray);
+			}
+
+			var blob = new Blob(byteArrays, {type: contentType});
+			return blob;
+		}
+		
+		document.addEventListener('deviceready', app.init, false);
+	</script>
+  </body>
+</html>

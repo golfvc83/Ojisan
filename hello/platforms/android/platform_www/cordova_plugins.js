@@ -204,6 +204,22 @@ module.exports = [
       "cordova"
     ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-camera-preview.CameraPreview",
+    "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
+    "pluginId": "cordova-plugin-camera-preview",
+    "clobbers": [
+      "CameraPreview"
+    ]
+  },
+  {
+    "id": "cordova-plugin-android-permissions.Permissions",
+    "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+    "pluginId": "cordova-plugin-android-permissions",
+    "clobbers": [
+      "cordova.plugins.permissions"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -211,7 +227,9 @@ module.exports.metadata =
 {
   "cordova-plugin-camera": "4.0.3",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-file": "6.0.1"
+  "cordova-plugin-file": "6.0.1",
+  "cordova-plugin-camera-preview": "0.11.0",
+  "cordova-plugin-android-permissions": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

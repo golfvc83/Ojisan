@@ -11,7 +11,12 @@
     <script src="js/datgui.js"></script>        
     <script src="js/TweenMax.min.js"></script> 
     <script src="js/labs.js"></script> 
-	 <script src="js/phaser.js"></script>
+	<script src="js/phaser_stable.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/gh/photonstorm/phaser@3.17.0/dist/phaser.min.js"></script>-->
+	<!--<script src="//cdn.jsdelivr.net/npm/phaser@3.17.0/dist/phaser.js"></script>-->
+
+	<script type="text/javascript" src="js/picFile.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 </head>
 <style>
 
@@ -27,6 +32,108 @@
 
 	
     <input id="clippy" type="text" style="position: absolute; left: -2000px" />
-	<script type="text/javascript" async="" src="js/logic/flood-fill.js"></script>
+	<script>
+            /*let picFile = [
+				{"key":"PIC01","name":"1.JPG"},
+				{"key":"PIC02","name":"2.JPG"},
+				{"key":"PIC03","name":"3.JPG"},
+				{"key":"PIC04","name":"4.JPG"},
+				{"key":"PIC05","name":"5.JPG"},
+				{"key":"PIC06","name":"6.JPG"},
+				{"key":"PIC07","name":"7.JPG"},
+				{"key":"PIC08","name":"8.JPG"},
+				{"key":"PIC09","name":"9.JPG"},
+				{"key":"PIC10","name":"10.JPG"},
+				{"key":"PIC11","name":"11.JPG"},
+				{"key":"PIC12","name":"12.JPG"},
+				{"key":"PIC13","name":"13.JPG"},
+				{"key":"PIC14","name":"14.JPG"},
+				{"key":"PIC15","name":"15.JPG"},
+				{"key":"PIC16","name":"16.JPG"}
+			]*/
+			
+			let app = {
+				
+				
+				/*window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+					console.log(fs.root.fullPath)
+					//On simulator it will return something like /Users/intelligrape/Library/Application Support/iPhone Simulator/5.0/Applications/CF2A9018-49B9-4DE6-91FC-EA76CB435FC8/Document
+				})*/
+				
+                init: function(){
+                    //document.getElementById('btn').addEventListener('click', app.takephoto);
+					window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory+"imageFolder", ()=>{console.log("imageTest already exist");
+						//document.getElementById('photo').src = cordova.file.applicationStorageDirectory+"/lobo.jpg";
+					}, app.noImageFolder);
+					
+                   
+					
+                },
+				
+				noImageFolder : function(){
+					window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory, function(direct){
+						direct.getDirectory("imageFolder", {create: true, exclusive: false}, ()=>{ 
+						console.log("imageTest created");
+						
+						//for all images in assets copy them..
+						for(i = 0; i < picFile.length; i++){
+							app.copyFileFromAssetsFolder(cordova.file.applicationDirectory+"www/assets/murica/preloaded_smaller/"+picFile[i].name);
+						 }
+						 app.copyFileFromAssetsFolder(cordova.file.applicationDirectory+"www/assets/murica/preloaded_smaller/"+picFile[0].name);
+						},null)
+					}, null);
+				},
+				
+                /*takephoto: function(){
+                    let opts = {
+                        quality: 80,
+                        destinationType: Camera.DestinationType.FILE_URI,
+                        sourceType: Camera.PictureSourceType.CAMERA                    
+                    };
+                    
+                    navigator.camera.getPicture(app.ftw, app.wtf, opts);
+                },
+                ftw: function(imgURI){
+                    document.getElementById('msg').textContent = imgURI;
+                    //document.getElementById('photo').src = imgURI;
+					app.getFileEntry(imgURI);   
+                },
+                wtf: function(msg){
+                    document.getElementById('msg').textContent = msg;
+                },*/
+				
+				copyFileFromAssetsFolder: function(imgUri) {
+					window.resolveLocalFileSystemURL(imgUri, function success(fileEntry) {
+
+					// Do something with the FileEntry object, like write to it, upload it, etc.
+					// writeFile(fileEntry, imgUri);
+					console.log("got file: " + fileEntry.fullPath);	
+					var p;
+					//window.resolveLocalFileSystemURL(cordova.file.applicationDirectory, (dir)=>{ console.log(dir); p = dir}, null);
+					
+					//console.log(cordova.file.applicationStorageDirectory);
+					window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory+"/imageFolder", function(direct){
+						fileName = direct.toURL().split("/");
+						fileName = fileName[fileName.length-1];	
+						fileEntry.copyTo(direct, fileName, ()=>{
+							console.log("succeed");
+							//document.getElementById('photo').src = cordova.file.applicationStorageDirectory+"/lobo.jpg";
+						}, (error)=>{ alert(error.code);});
+						//document.getElementById("photo2").src = p + "/www/img/logo.jpg";
+						//displayFileData(fileEntry.nativeURL, "Native URL");
+					});
+				}, function () {
+					// If don't get the FileEntry (which may happen when testing
+					// on some emulators), copy to a new FileEntry.
+					//createNewFileEntry(imgUri);
+					console.log("can not get file entry");
+					});
+				}
+				
+            };
+            
+            document.addEventListener('deviceready', app.init);
+       </script>
+	   <script type="text/javascript" async="" src="js/logic/flood-fill.js"></script>
 </body>
 </html>

@@ -15,6 +15,13 @@
     },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-plugin-camera-preview": {
+      "ANDROID_SUPPORT_LIBRARY_VERSION": "26+",
+      "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.example.hello"
     }
   },
   "dependent_plugins": {}

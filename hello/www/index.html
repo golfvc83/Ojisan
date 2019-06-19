@@ -69,9 +69,9 @@
 				
                 init: function(){
                     document.getElementById('btn').addEventListener('click', app.takephoto);
-					window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory+"imageTest", ()=>{console.log("imageTest already exist");
+					/*window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory+"imageTest", ()=>{console.log("imageTest already exist");
 						document.getElementById('photo').src = cordova.file.applicationStorageDirectory+"/lobo.jpg";
-					}, app.noImageTest);
+					}, app.noImageTest);*/
                     
 					
                 },
@@ -109,7 +109,7 @@
 					var p;
 					//window.resolveLocalFileSystemURL(cordova.file.applicationDirectory, (dir)=>{ console.log(dir); p = dir}, null);
 					
-					console.log(cordova.file.applicationStorageDirectory);
+					//console.log(cordova.file.applicationStorageDirectory);
 					window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory, function(direct){
 						fileEntry.copyTo(direct, "lobo.jpg", ()=>{
 							console.log("succeed");

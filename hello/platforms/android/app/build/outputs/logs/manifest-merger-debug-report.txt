@@ -11,15 +11,16 @@ INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\
 	android:name
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:12:127-180
 manifest
-ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\support-v4-24.1.1.aar\9a28daf12883739cb98a837bc82e4975\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:17:1-28:12
 MERGED from [:CordovaLib] C:\Users\Bamboo Labs\Desktop\hello\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-18:12
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
 	package
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:2:102-129
 		INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml
@@ -55,9 +56,11 @@ ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\And
 	android:name
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:5:5-15:19
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:5:5-16:19
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\support-v4-24.1.1.aar\9a28daf12883739cb98a837bc82e4975\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\support-v4-24.1.1.aar\9a28daf12883739cb98a837bc82e4975\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:22:5-26:19
 	android:supportsRtl
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
 	android:label
@@ -92,29 +95,59 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
 	android:name
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
+activity#com.cordovaplugincamerapreview.CameraActivity
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:15:9-161
+	android:screenOrientation
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:15:80-116
+	android:theme
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:15:117-158
+	android:name
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:15:19-79
 uses-sdk
-ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:16:5-74
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:16:5-74
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:5-74
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:5-74
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\support-v4-24.1.1.aar\9a28daf12883739cb98a837bc82e4975\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\support-v4-24.1.1.aar\9a28daf12883739cb98a837bc82e4975\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:20:5-44
 MERGED from [:CordovaLib] C:\Users\Bamboo Labs\Desktop\hello\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] C:\Users\Bamboo Labs\Desktop\hello\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
-INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:16:5-74
+INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:5-74
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v4:24.1.1] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\support-v4-24.1.1.aar\9a28daf12883739cb98a837bc82e4975\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:16:42-71
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:42-71
 	android:minSdkVersion
-		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:16:15-41
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:15-41
 		INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:5-81
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:18:5-81
 	android:name
-		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:17:22-78
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:18:22-78
+uses-feature#android.hardware.camera
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:19:5-84
+	android:required
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:19:58-81
+	android:name
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:19:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:20:5-70
+	android:name
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:20:19-67
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:21:5-65
+	android:name
+		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:21:22-62
 meta-data#android.support.FILE_PROVIDER_PATHS
 ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:13:13-123
 	android:resource
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:13:75-120
 	android:name
 		ADDED from C:\Users\Bamboo Labs\Desktop\hello\platforms\android\app\src\main\AndroidManifest.xml:13:24-74
+meta-data#android.support.VERSION
+ADDED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:23:9-25:38
+	android:value
+		ADDED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:25:13-35
+	android:name
+		ADDED from [com.android.support:exifinterface:26.1.0] C:\Users\Bamboo Labs\.gradle\caches\transforms-1\files-1.1\exifinterface-26.1.0.aar\e6ce5147cdd28dbeceb6f6c8f701029a\AndroidManifest.xml:24:13-51
